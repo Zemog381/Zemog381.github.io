@@ -1,0 +1,47 @@
+{
+  "header": {
+    "title": "Bienvenue sur le portfolio de Rémi Gomez"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "content": "Je suis étudiant en 2ᵉ année du cycle ingénieur en informatique à Sup Galilée (Université Sorbonne Paris Nord) et apprenti ingénieur informatique en alternance."
+  },
+  "projects": {
+    "title": "Projets informatiques",
+    "items": [
+      "Puissance 4 en C avec IA MinMax",
+      "Interface graphique de la bataille navale en C",
+      "Jeu de vaisseaux et de météores",
+      "Algorithme d'inversion de matrice en C",
+      "Site web en HTML/CSS",
+      "Ce portfolio multilingue"
+    ]
+  },
+  "experience": {
+    "title": "Expériences professionnelles",
+    "content": "Alternant ingénieur informatique depuis septembre 2023. Expériences antérieures : assistant école maternelle (2019), travail agricole (2021), stage d'observation en brasserie (2018)."
+  },
+  "skills": {
+    "title": "Compétences",
+    "items": [
+      "C, C++, Java, Python, JavaScript",
+      "HTML, CSS, SQL, MATLAB, MIPS, GTK",
+      "Algorithmique, débogage",
+      "Proactivité, curiosité, travail d'équipe"
+    ]
+  },
+  "video": {
+    "title": "Présentation vidéo(celle de mrbeast car pas le temps pour faire ma video mais bien en vf avec les sous titres de la langue choisie pour la page)",
+    "url": "https://www.youtube.com/embed/l-nMKJ5J3Uc?cc_load_policy=1&cc_lang_pref=fr"
+  },
+
+  "resume": {
+    "title": "Résumé",
+    "content": "Développer le site que vous avez sous les yeux m'a permis de mettre en pratique ce que j'ai appris tout au long de mon cours de web sémantique. Comme par exemple l'utilisation de RDFa pour enrichir le contenu avec des métadonnées, la structuration multilingue avec hreflang, et le chargement dynamique via JSON."
+  },
+
+  "contact": {
+    "title": "Contact",
+    "instructions": "Envoyez-moi un mail à remizemog07259@gmail.com."
+  }
+}
