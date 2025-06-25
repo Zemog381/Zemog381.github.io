@@ -1,20 +1,101 @@
-<p>bonjour vous vous trouvez sur le portfolio de Rémi Gomez.
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Rémi Gomez</title>
 
-  <arbre>
-    <tronc>
-      <branche>
-        <feuille/>
-      </branche>
-    </tronc>
-  </arbre>
-  <arbre>
-    <tronc/>
-  </arbre>
-  <arbre>
-    <tronc>
-      <branche>
-        <feuille/>
-      </branche>
-    </tronc>
-  </arbre>
-</p>
+  <!-- SEO : versions multilingues -->
+  <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
+  <link rel="alternate" hreflang="en" href="index.html?lang=en">
+  <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <!-- sélecteur de langue – le ?lang conserve le nom de page automatiquement -->
+    <div class="lang-switch">
+      <a href="?lang=fr" title="Français">🇫🇷</a>
+      <a href="?lang=en" title="English">🇬🇧</a>
+      <a href="?lang=ja" title="日本語">🇯🇵</a>
+    </div>
+    <h1 id="welcome-text"></h1>
+
+    <!--RDFa sur mes infos -->
+    <div typeof="Person" vocab="https://schema.org/" resource="#remi" style="display:none">
+      <span property="name">Rémi Gomez</span>
+      <span property="jobTitle">Apprenti Ingénieur Informatique</span>
+      <span property="email">remizemog07259@gmail.com</span>
+      <span property="affiliation">Université Sorbonne Paris Nord</span>
+      <link property="url" href="https://www.linkedin.com/in/r%C3%A9mi-gomez-3363b12ba/" />
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" typeof="Person" vocab="https://schema.org/" resource="#remi"></section>
+
+    <section id="projects"></section>
+    <section id="experience"></section>
+    <section id="skills"></section>
+    <section id="video">
+      <h2 id="video-title"></h2>
+      <!-- iframe YouTube -->
+      <div id="video-wrapper"></div>
+    </section>
+    <section id="resume"></section>
+  </main>
+
+  <footer>
+    <section id="contact"></section>
+  </footer>
+
+  <script>
+    // -------------------------------------------------------
+    // Détermination de la langue
+    // -------------------------------------------------------
+    const params = new URLSearchParams(window.location.search);
+
+
+    let lang = params.get("lang") ||sessionStorage.getItem("lang") ||(navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language || "").split("-")[0] || "fr";
+
+    // On stocke le choix en session pour les prochains chargements
+    sessionStorage.setItem("lang", lang);
+
+    // -------------------------------------------------------
+    // Chargement dynamique du contenu JSON
+    // -------------------------------------------------------
+    fetch(`lang/${lang}.json`)
+      .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+      .then(data => {
+        document.documentElement.lang = lang;
+        document.getElementById("welcome-text").textContent = data.header.title;
+
+        // Sections
+        document.getElementById("about").innerHTML = `<h2>${data.about.title}</h2><p property="description">${data.about.content}</p>`;
+        document.getElementById("projects").innerHTML = `<h2>${data.projects.title}</h2><ul>${data.projects.items.map(p => `<li>${p}</li>`).join("")}</ul>`;
+        document.getElementById("experience").innerHTML = `<h2>${data.experience.title}</h2><p>${data.experience.content}</p>`;
+        document.getElementById("skills").innerHTML = `<h2>${data.skills.title}</h2><ul>${data.skills.items.map(s => `<li>${s}</li>`).join("")}</ul>`;
+        document.getElementById("experience").innerHTML = `<h2>${data.experience.title}</h2><p>${data.experience.content}</p>`;
+        document.getElementById("resume").innerHTML = `<h2>${data.resume.title}</h2><p>${data.resume.content}</p>`;
+
+        const videoWrapper = document.getElementById("video-wrapper");
+        videoWrapper.innerHTML = ""; // reset
+        if (/youtube\.com\/embed/.test(data.video.url)) {
+          videoWrapper.innerHTML = `<h2>${data.video.title}</h2><iframe width="100%" height="400" src="${data.video.url}" frameborder="0" allowfullscreen></iframe>`;
+        } else {
+          videoWrapper.innerHTML = `<h2>${data.video.title}</h2><video controls width="100%"><source src="${data.video.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+        }
+        
+
+        // Contact
+        document.getElementById("contact").innerHTML = `<h2>${data.contact.title}</h2><p>${data.contact.instructions}</p>`;
+      })
+      .catch(err => {
+        console.error("Erreur chargement JSON", err);
+      });
+  </script>
+</body>
+</html>
