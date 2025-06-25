@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "レミ・ゴメスのポートフォリオへようこそ"
+  },
+  "about": {
+    "title": "自己紹介",
+    "content": "私は Sup Galilée（パリ13大学）のコンピュータ工学 2年生で、企業で働きながら学ぶ見習いエンジニアです。"
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "items": [
+      "C言語で作ったミニマックスAI付き四目並べ",
+      "C言語のバトルシップGUI",
+      "宇宙船と隕石のゲーム",
+      "C言語の行列反転アルゴリズム",
+      "HTML/CSS ウェブサイト",
+      "この多言語ポートフォリオ"
+    ]
+  },
+  "experience": {
+    "title": "職務経験",
+    "content": "2023年9月からソフトウェアエンジニア見習い。過去の職務：幼稚園アシスタント（2019）、農場労働（2021）、醸造所インターン（2018）。"
+  },
+  "skills": {
+    "title": "スキル",
+    "items": [
+      "C, C++, Java, Python, JavaScript",
+      "HTML, CSS, SQL, MATLAB, MIPS, GTK",
+      "アルゴリズム, デバッグ",
+      "主体性, 好奇心, チームワーク"
+    ]
+  },
+  "video": {
+    "title": "自己紹介ビデオ",
+    "url": "https://www.youtube.com/embed/l-nMKJ5J3Uc?cc_load_policy=1&cc_lang_pref=ja"
+  },
+  "resume": {
+    "title": "要約",
+    "content": "目の前にあるこのサイトを開発することで、セマンティックウェブの授業で学んだことを実践に移すことができました。たとえば、メタデータでコンテンツを豊かにするためのRDFaの使用、多言語対応のためのhreflangによる構造化、そしてJSONによる動的な読み込みなどです。"
+  },
+  "contact": {
+    "title": "連絡先",
+    "instructions": "remizemog07259@gmail.com にメールを送ってください。"
+  }
+}
