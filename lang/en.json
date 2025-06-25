@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "Welcome to Rémi Gomez's portfolio"
+  },
+  "about": {
+    "title": "About me",
+    "content": "I am a second‑year computer engineering student at Sup Galilée (Université Sorbonne Paris Nord) and an apprentice software engineer."
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      "Connect Four in C with MinMax AI",
+      "Battleship GUI in C",
+      "Spaceship vs Meteors game",
+      "Matrix inversion algorithm in C",
+      "HTML/CSS website",
+      "This multilingual portfolio"
+    ]
+  },
+  "experience": {
+    "title": "Professional experience",
+    "content": "Apprentice software engineer since September 2023. Previous roles: kindergarten assistant (2019), farm work (2021), brewery internship (2018)."
+  },
+  "skills": {
+    "title": "Skills",
+    "items": [
+      "C, C++, Java, Python, JavaScript",
+      "HTML, CSS, SQL, MATLAB, MIPS, GTK",
+      "Algorithms, debugging",
+      "Proactivity, curiosity, teamwork"
+    ]
+  },
+  "video": {
+    "title": "Video presentation",
+    "url": "https://www.youtube.com/embed/l-nMKJ5J3Uc?cc_load_policy=1&cc_lang_pref=en"
+  },
+  "resume": {
+    "title": "Resume",
+    "content": "Developing the site you see before you allowed me to put into practice what I learned throughout my semantic web course. For example, using RDFa to enrich content with metadata, implementing multilingual structuring with hreflang, and dynamic loading via JSON."
+  },
+  "contact": {
+    "title": "Contact",
+    "instructions": "Send me an email at remizemog07259@gmail.com."
+  }
+}
